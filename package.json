@@ -1,6 +1,6 @@
 {
-  "name": "@release-it-plugins/workspaces",
-  "version": "4.0.0",
+  "name": "@release-it-plugins/multiple-workspaces",
+  "version": "1.0.0",
   "description": "release-it plugin for bumping and publishing workspaces",
   "keywords": [
     "release",
@@ -8,7 +8,7 @@
     "release-it-plugin",
     "plugin"
   ],
-  "repository": "https://github.com/release-it-plugins/workspaces",
+  "repository": "https://github.com/airwaycai/workspaces.git",
   "license": "MIT",
   "author": "Robert Jackson <me@rwjblue.com>",
   "type": "module",
