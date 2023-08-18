@@ -31,19 +31,11 @@ folder and calling `npm publish`).
 Installation using your projects normal package manager, for example:
 
 ```sh
-<<<<<<< HEAD
 npm install --save-dev @standard-release-plugins/workspaces
 
 # or
 
 yarn add --dev --ignore-workspace-root-check @standard-release-plugins/workspaces
-=======
-npm install --save-dev @release-it-plugins/multiple-workspaces
-
-# or
-
-yarn add --dev --ignore-workspace-root-check @release-it-plugins/multiple-workspaces
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
 ```
 
 Once installed, configure `release-it` to use the plugin.
@@ -54,11 +46,7 @@ For example, configuring via `package.json` would look like this:
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": true
-=======
-      "@release-it-plugins/multiple-workspaces": true
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
     }
   }
 }
@@ -74,11 +62,7 @@ would add the following to your `release-it` config (again showing
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": true
-=======
-      "@release-it-plugins/multiple-workspaces": true
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
     },
     "npm": false
   }
@@ -87,11 +71,7 @@ would add the following to your `release-it` config (again showing
 
 ## Configuration
 
-<<<<<<< HEAD
 For the most part `@standard-release-plugins/workspaces` "does the right thing", but
-=======
-For the most part `@release-it-plugins/multiple-workspaces` "does the right thing", but
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
 there are a few things that are configurable.
 
 A quick summary (in TypeScript syntax) of the supported options (more details
@@ -151,11 +131,7 @@ interface ReleaseItWorkSpacesConfiguration {
 
 ### skipChecks
 
-<<<<<<< HEAD
 By default, `@standard-release-plugins/workspaces` confirms that the `npm` registry is up
-=======
-By default, `@release-it-plugins/multiple-workspaces` confirms that the `npm` registry is up
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
 and running (via `npm ping`) and that you are authenticated properly (via `npm
 whoami`). If you'd prefer to avoid these checks (e.g. your custom `npm`
 registry does not support them) you can specify the `skipChecks` option:
@@ -164,11 +140,7 @@ registry does not support them) you can specify the `skipChecks` option:
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": {
-=======
-      "@release-it-plugins/multiple-workspaces": {
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
         "skipChecks": true
       }
     }
@@ -178,11 +150,7 @@ registry does not support them) you can specify the `skipChecks` option:
 
 ### publish
 
-<<<<<<< HEAD
 `@standard-release-plugins/workspaces` publishes to the `npm` registry.
-=======
-`@release-it-plugins/multiple-workspaces` publishes to the `npm` registry.
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
 However, some repository configurations prefer to commit + tag then let CI
 publish the actual packages to the registry. This is where the `publish` option
 comes in:
@@ -191,11 +159,7 @@ comes in:
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": {
-=======
-      "@release-it-plugins/multiple-workspaces": {
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
         "publish": false
       }
     }
@@ -209,11 +173,7 @@ published.
 
 ### distTag
 
-<<<<<<< HEAD
 `@standard-release-plugins/workspaces` uses the `latest` dist-tag when the
-=======
-`@release-it-plugins/multiple-workspaces` uses the `latest` dist-tag when the
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
 released version is a stable release and the prereleaseId when it is a
 prerelease (e.g. `beta` for `1.0.0-beta.1`). This is a good default setup, but
 there may be cases where you would like to specify a custom dist-tag to be
@@ -223,11 +183,7 @@ used.
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": {
-=======
-      "@release-it-plugins/multiple-workspaces": {
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
         "distTag": "lts"
       }
     }
@@ -239,11 +195,7 @@ used.
 
 The list of workspaces is gathered from the `package.json` in the current
 working directory. This is the same location that `npm install`/`yarn install` uses, and it
-<<<<<<< HEAD
 is a great default for `@standard-release-plugins/workspaces`. In some circumstances, the
-=======
-is a great default for `@release-it-plugins/multiple-workspaces`. In some circumstances, the
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
 workspace settings that `npm`/`yarn` should use differ from the actual locations that
 are published.  Most commonly this is due to a custom build script that emits
 the compiled and ready to publish packages into a different location (e.g.
@@ -253,11 +205,7 @@ the compiled and ready to publish packages into a different location (e.g.
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": {
-=======
-      "@release-it-plugins/multiple-workspaces": {
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
         "workspaces": ["dist/packages/*"]
       }
     }
@@ -266,11 +214,7 @@ the compiled and ready to publish packages into a different location (e.g.
 ```
 
 This value replaces the value from `package.json`, and given the above
-<<<<<<< HEAD
 configuration `@standard-release-plugins/workspaces` would publish each package (that was
-=======
-configuration `@release-it-plugins/multiple-workspaces` would publish each package (that was
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
 not private) in `dist/packages` folder.
 
 ### additionalManifests
@@ -285,11 +229,7 @@ you may publish an alternate `docs.json` file in your published package.
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": {
-=======
-      "@release-it-plugins/multiple-workspaces": {
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
         "additionalManifests": {
           "versionUpdates": ["dist/docs.json"]
       }
@@ -315,11 +255,7 @@ newly published versions.
 {
   "release-it": {
     "plugins": {
-<<<<<<< HEAD
       "@standard-release-plugins/workspaces": {
-=======
-      "@release-it-plugins/multiple-workspaces": {
->>>>>>> 934f8b7563847bb90056f23faab25559362f3afb
         "additionalManifests": {
           "dependencyUpdates": ["blueprints/*/package.json"]
       }
